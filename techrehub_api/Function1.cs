@@ -70,7 +70,7 @@ namespace techrehub_api
                 {
                     Content = Convert.ToBase64String(imageBytes),
                     Type = "image/jpeg", // Adjust this if you're using a different image format
-                    Filename = "device_image.jpg", // You can customize the filename
+                    Filename = "device_images.jpg", // You can customize the filename
                     Disposition = "attachment",
                     ContentId = Guid.NewGuid().ToString()
                 };
