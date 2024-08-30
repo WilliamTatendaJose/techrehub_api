@@ -10,7 +10,7 @@ using System.Net.Mail;
 using System.Text.RegularExpressions;
 using Attachment = SendGrid.Helpers.Mail.Attachment;
 
-namespace techrehub_api
+namespace techrehubApi
 {
     public class Function1
     {
