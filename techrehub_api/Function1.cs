@@ -14,19 +14,14 @@ namespace techrehubApi
 {
     public class Function1
     {
-        private readonly ILogger<Function1> _logger;
 
-        public Function1(ILogger<Function1> logger)
-        {
-            _logger = logger;
-        }
 
         [Function("RepairRequest")]
         public async Task<IActionResult> Run(
         [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
         ILogger log)
         {
-            //log.LogInformation("C# HTTP trigger function processed a request.");
+        
 
             string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
             dynamic data = JsonConvert.DeserializeObject(value: requestBody);
