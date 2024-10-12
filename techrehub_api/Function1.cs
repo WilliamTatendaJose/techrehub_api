@@ -50,10 +50,10 @@ namespace techrehubApi
         private static async Task SendEmailWithSendGrid(string name, string email, string phone, string deviceType,string description ,string imageBase64)
         {
             var apiKey = Environment.GetEnvironmentVariable("SendGridApiKey");
-            var client = new SendGridClient(apiKey);
-            var from = new EmailAddress(Environment.GetEnvironmentVariable("FromEmail"), "Device Repair Service");
+            var client = new SendGridClient("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");
+            var from = new EmailAddress("josewirri@hotmail.com", "Device Repair Service");
             var subject = "New Device Repair Request";
-            var to = new EmailAddress(Environment.GetEnvironmentVariable("ToEmail"));
+            var to = new EmailAddress("techrehub@proton.me");
             var plainTextContent = $"Name: {name}\nEmail: {email}\nPhone: {phone}\nDevice Type: {deviceType}";
             var htmlContent = $"<strong>Name:</strong> {name}<br><strong>Email:</strong> {email}<br><strong>Phone:</strong> {phone}<br><strong>Device Type:</strong> {deviceType}<br><strong>Fault:</strong> {description}";
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
